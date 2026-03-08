@@ -19,7 +19,7 @@ xxx
 
 ### *c)* 
 
-![3.1c!]
+![Atividade 3.1 c)](3.1c.png)
 
 
 ## ​Problema 3.2
@@ -62,4 +62,5 @@ xxx
 
 
 ![ex_3_3_d!](ex_3_3d.jpg "AnImage")
+
 
