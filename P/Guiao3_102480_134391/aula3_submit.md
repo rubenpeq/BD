@@ -6,7 +6,13 @@
 ### *a)*
 
 ```
-xxx
+CLIENTE(\underline{NIF}, nome, endereco, num_carta) BALCAO(\underline{numero}, nome, endereco)
+TIPO_VEICULO(\underline{designacao}, arcondicionado)
+VEICULO(\underline{matricula}, marca, ano, tipo_designacao)
+LIGEIRO(\underline{matricula}, codigo, numlugares, portas, combustivel)
+PESADO(\underline{matricula}, peso, passageiros)
+ALUGUER(\underline{numero}, data, duracao, NIF_cliente, num_balcao, matricula_veiculo)
+SIMILARIDADE(\underline{designacao1, designacao2})
 ```
 
 
@@ -62,6 +68,7 @@ xxx
 
 
 ![ex_3_3_d!](ex_3_3d.jpg "AnImage")
+
 
 
 
