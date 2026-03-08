@@ -19,7 +19,7 @@ xxx
 
 ### *c)* 
 
-![ex_3_1c!](ex_3_1c.jpg "AnImage")
+![ex_3_1c!](ex_3_1c.jpg "3.1c")
 
 
 ## ​Problema 3.2
@@ -59,5 +59,6 @@ xxx
 ![ex_3_3_c!](ex_3_3c.jpg "AnImage")
 
 ### *d)* 2.4
+
 
 ![ex_3_3_d!](ex_3_3d.jpg "AnImage")
