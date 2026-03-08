@@ -28,7 +28,7 @@ VEICULO,      matricula,               matricula,         tipo_designacao → TI
 LIGEIRO,      matricula,           "matricula, codigo",     matricula → VEICULO
 PESADO,       matricula,               matricula,           matricula → VEICULO
 ALUGUER,       numero,            NIF_cliente → CLIENTE,    num_balcao → BALCAO, matricula_veiculo → VEICULO
-SIMILARIDADE,"{codigo1, codigo2}","{codigo1, codigo2}",codigo1 → TIPO_VEICULO; codigo2 → TIPO_VEICULO
+SIMILARIDADE,"codigo1, codigo2",  "codigo1, codigo2",       codigo1 → TIPO_VEICULO; codigo2 → TIPO_VEICULO
 ```
 
 
@@ -77,6 +77,7 @@ SIMILARIDADE,"{codigo1, codigo2}","{codigo1, codigo2}",codigo1 → TIPO_VEICULO;
 
 
 ![ex_3_3_d!](ex_3_3d.jpg "AnImage")
+
 
 
 
