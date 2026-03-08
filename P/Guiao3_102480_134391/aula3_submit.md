@@ -6,14 +6,14 @@
 ### *a)*
 
 ```
-CLIENTE(N͟I͟F, nome, endereco, num_carta)
-BALCAO(n͟u͟m͟e͟r͟o, nome, endereco)
-TIPO_VEICULO(designacao, arcondicionado, c̲o̲d̲i̲g̲o̲)
-VEICULO(m͟a͟t͟r͟i͟c͟u͟l͟a, marca, ano, tipo_designacao)
-LIGEIRO(m͟a͟t͟r͟i͟c͟u͟l͟a, codigo, numlugares, portas, combustivel)
-PESADO(m͟a͟t͟r͟i͟c͟u͟l͟a, peso, passageiros)
-ALUGUER(n͟u͟m͟e͟r͟o, data, duracao, NIF_cliente, num_balcao, matricula_veiculo)
-SIMILARIDADE(c͟o͟d͟i͟g͟o͟1͟|c͟o͟d͟i͟g͟o͟2͟)
+CLIENTE(NIF (PK), nome, endereco, num_carta)
+BALCAO(numero (PK), nome, endereco)
+TIPO_VEICULO(designacao, arcondicionado, codigo (PK))
+VEICULO(matricula (PK), marca, ano, tipo_designacao)
+LIGEIRO(matricula (PK), codigo, numlugares, portas, combustivel)
+PESADO(matricula (PK), peso, passageiros)
+ALUGUER(numero (PK), data, duracao, NIF_cliente, num_balcao, matricula_veiculo)
+SIMILARIDADE(codigo1 (PK), codigo2 (PK))
 ```
 
 
@@ -34,7 +34,7 @@ SIMILARIDADE,"codigo1, codigo2",  "codigo1, codigo2",       codigo1 → TIPO_VEI
 
 ### *c)* 
 
-![Atividade 3.1 c)](3.1c.png)
+![Atividade 3.1 c)](ex_3_1c.jpg "AnImage")
 
 
 ## ​Problema 3.2
@@ -42,7 +42,16 @@ SIMILARIDADE,"codigo1, codigo2",  "codigo1, codigo2",       codigo1 → TIPO_VEI
 ### *a)*
 
 ```
-... Write here your answer ...
+AIRPORT(airport_code (PK) | name | city | state)
+AIRPLANE_TYPE(type_name (PK) | company | max_seats)
+CAN_LAND(airport_code (PK) | type_name (PK))
+AIRPLANE(airplane_id (PK) | total_no_of_seats | type_name)
+FLIGHT(number (PK) | airline | weekdays)
+FLIGHT_LEG(number (PK) | leg_no (PK) | departure_airport_code | arrival_airport_code | scheduled_dep_time | scheduled_arr_time)
+LEG_INSTANCE(number (PK) | leg_no (PK) | date (PK) | dep_time | arr_time | no_of_avail_seats | airplane_id | dep_airport_code | arr_airport_code)
+FARE(number (PK) | code (PK) | amount | restrictions)
+SEAT(number (PK) | leg_no (PK) | date (PK) | seat_no (PK))
+RESERVATION(number (PK) | leg_no (PK) | date (PK) | seat_no (PK) | customer_name | cphone)
 ```
 
 
@@ -63,11 +72,11 @@ SIMILARIDADE,"codigo1, codigo2",  "codigo1, codigo2",       codigo1 → TIPO_VEI
 
 ### *a)* 2.1
 
-![2.1](3.3_2.1.png)
+![2.1](ex_3_3a.jpg "AnImage")
 
 ### *b)* 2.2
 
-![2.2](3.3_2.2.png)
+![2.2](ex_3_3b.jpg "AnImage")
 
 ### *c)* 2.3
 
