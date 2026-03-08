@@ -44,14 +44,14 @@ SIMILARIDADE,"codigo1, codigo2",  "codigo1, codigo2",       codigo1 → TIPO_VEI
 ```
 AIRPORT(airport_code (PK) | name | city | state)
 AIRPLANE_TYPE(type_name (PK) | company | max_seats)
-CAN_LAND(airport_code (PK) | type_name (PK))
-AIRPLANE(airplane_id (PK) | total_no_of_seats | type_name)
+CAN_LAND(airport_code (PK)(FK) | type_name (PK)(FK))
+AIRPLANE(airplane_id (PK) | total_no_of_seats | type_name (FK))
 FLIGHT(number (PK) | airline | weekdays)
-FLIGHT_LEG(number (PK) | leg_no (PK) | departure_airport_code | arrival_airport_code | scheduled_dep_time | scheduled_arr_time)
-LEG_INSTANCE(number (PK) | leg_no (PK) | date (PK) | dep_time | arr_time | no_of_avail_seats | airplane_id | dep_airport_code | arr_airport_code)
-FARE(number (PK) | code (PK) | amount | restrictions)
-SEAT(number (PK) | leg_no (PK) | date (PK) | seat_no (PK))
-RESERVATION(number (PK) | leg_no (PK) | date (PK) | seat_no (PK) | customer_name | cphone)
+FLIGHT_LEG(number (PK)(FK) | leg_no (PK) | departure_airport_code (FK) | arrival_airport_code (FK) | scheduled_dep_time | scheduled_arr_time)
+LEG_INSTANCE(number (PK)(FK) | leg_no (PK)(FK) | date (PK) | dep_time | arr_time | no_of_avail_seats | airplane_id (FK) | dep_airport_code (FK) | arr_airport_code (FK))
+FARE(number (PK)(FK) | code (PK) | amount | restrictions)
+SEAT(number (PK)(FK) | leg_no (PK)(FK) | date (PK)(FK) | seat_no (PK))
+RESERVATION(number (PK)(FK) | leg_no (PK)(FK) | date (PK)(FK) | seat_no (PK)(FK) | customer_name | cphone)
 ```
 
 
