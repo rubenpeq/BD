@@ -4,7 +4,7 @@
 
 ### 1. Sistema de Gestão de um Rent-a-Car
 
-[SQL DDL File](ex_4_1_1.sql "SQLFileQuestion")
+[SQL DDL File](REANTACARsql "RENT_A_CAR")
 
 ![ex_4_1_1 diagram](ex_4_1_1.png "AnImage")
 
