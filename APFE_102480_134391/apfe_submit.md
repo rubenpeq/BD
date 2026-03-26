@@ -13,7 +13,7 @@ Este trabalho propõe o desenvolvimento de um sistema de gestão para uma barbea
 ### 1. Requisitos Funcionais (O que o sistema deve fazer)
 
 #### A. Gestão de Clientes e Agendamentos
-- **Cadastro de Clientes**: O sistema deve permitir registar nome, apelido, telefone, NIF e data de cadastro.
+- **Cadastro de Clientes**: O sistema deve permitir registar nome, apelido, telefone, NIF e numero de cadastro.
 - **Controlo de Agenda**: Deve ser possível marcar horários associando um Cliente a um Barbeiro e a um ou mais Serviços.
 - **Status de Agendamento**: O sistema deve gerir o ciclo de vida do agendamento (Pendente, Concluído ou Cancelado).
 
