@@ -77,7 +77,7 @@ By the end of this course, the goal is to be able to:
 
 ## Authors
 
-**[Rúben Pequeno]**  
+**[Rúben Pequeno(https://github.com/rubenpeq)]**  
 **[Eduardo Assis]**  
 
 Students @ [Universidade de Aveiro]
