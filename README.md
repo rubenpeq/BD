@@ -1,4 +1,4 @@
-# Database Systems (BD) – Curricular Unit
+# Database Systems (BD)
 
 Repository for the **Database Systems (Base de Dados)** curricular unit materials.
 
