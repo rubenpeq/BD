@@ -79,6 +79,7 @@ By the end of this course, the goal is to be able to:
 
 **[Rúben Pequeno]**  
 **[Eduardo Assis]**  
+
 Students @ [Universidade de Aveiro]
 
 ---
