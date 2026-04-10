@@ -2,7 +2,7 @@
 
 **Grupo**: P3G1
 - Rúben Pequeno, MEC: 102480
-- Eduardo, MEC: 134391
+- Eduardo Assis, MEC: 134391
 
 ## Introdução / Introduction
  
@@ -10,7 +10,7 @@ Este trabalho propõe o desenvolvimento de um sistema de gestão para uma barbea
 
 ## Análise de Requisitos / Requirements
 
-### 1. Requisitos Funcionais (O que o sistema deve fazer)
+### 1. Requisitos Funcionais
 
 #### A. Gestão de Clientes e Agendamentos
 - **Cadastro de Clientes**: O sistema deve permitir registar nome, apelido, telefone, NIF e numero de cadastro.
@@ -35,7 +35,7 @@ Este trabalho propõe o desenvolvimento de um sistema de gestão para uma barbea
 - **Movimentação de Caixa**: Centralização de todas as entradas (receitas de serviços e vendas) e saídas (pagamento de salários e despesas fixas).
 - **Controlo de Despesas**: Gestão de custos fixos (renda, luz, água) com data de vencimento.
 
-### 2. Regras de Negócio (Restrições e Lógicas)
+### 2. Regras de Negócio
 - **Herança de Produtos**: Um produto tem de ser obrigatoriamente ou de venda ou de consumo (Restrição `t` - total), mas nunca os dois simultaneamente (Restrição `d` - disjoint).
 - **Cálculo de Receita**: Toda a conclusão de um Agendamento ou uma Compra (venda para o cliente) deve gerar automaticamente um registo de "Receita" na tabela de `Movimentacao_CAIXA`.
 - **Atualização de Stock**:
