@@ -6,64 +6,65 @@
 ### *a)*
 
 ```
-Write here your answer e.g:
-(π Pname, Pnumber (project) ⨝ Pno=Pnumber (works_on)) ⨝.... 
+π Fname, Minit, Lname, Ssn, Pname (EMPLOYEE ⨝ Ssn=Esan (WORKS_ON ⨝ Pno=Pnumber PROJECT))  
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+Chefe ← σ Fname='Carlos' ∧ Minit='D' ∧ Lname='Gomes' (EMPLOYEE) Resultado ← π Subordinado.Fname, Subordinado.Lname (EMPLOYEE_Subordinado ⨝ Subordinado.Super_ssn=Chefe.Ssn Chefe) 
+
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ Pname, SUM(Hours) → Total_Horas_Semanais (PROJECT ⨝ Pnumber=Pno WORKS_ON) 
+
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+π Fname, Lname (σ Dno=3 ∧ Pname='Aveiro Digital' ∧ Hours>20 (EMPLOYEE ⨝ Ssn=Esan (WORKS_ON ⨝ Pno=Pnumber PROJECT)))
 ```
 
 
 ### *e)* 
 
 ```
-... Write here your answer ...
+π Fname, Lname (EMPLOYEE) − π Fname, Lname (EMPLOYEE ⨝ Ssn=Esan WORKS_ON)
 ```
 
 
 ### *f)* 
 
 ```
-... Write here your answer ...
+Fem_Emp ← σ Sex='F' (EMPLOYEE) γ Dname, AVG(Salary) → media_feminina (DEPARTMENT ⨝ Dnumber=Dno Fem_Emp)
 ```
 
 
 ### *g)* 
 
 ```
-... Write here your answer ...
+Contagem ← γ Ssn, Fname, Lname, COUNT(Dependent_name) → soma (EMPLOYEE ⨝ Ssn=Essn DEPENDENT) σ soma > 2 (Contagem) 
 ```
 
 
 ### *h)* 
 
 ```
-... Write here your answer ...
+Gestores ← π Fname, Lname, Ssn (EMPLOYEE ⨝ Ssn=Mgr_ssn DEPARTMENT) ComDep ← π Fname, Lname, Ssn (Gestores ⨝ Ssn=Essn DEPENDENT) Resultado ← Gestores − ComDep 
 ```
 
 
 ### *i)* 
 
 ```
-... Write here your answer ...
+ProjAveiro ← π Fname, Address (σ Plocation='Aveiro' (EMPLOYEE ⨝ Dno=Dnum PROJECT)) DeptAveiro ← π Fname, Address (σ Dlocation='Aveiro' (EMPLOYEE ⨝ Dno=Dnumber DEPT_LOCATIONS)) Resultado ← ProjAveiro − DeptAveiro
 ```
 
 
@@ -72,27 +73,27 @@ Write here your answer e.g:
 ### *a)*
 
 ```
-... Write here your answer ...
+π nome (FORNECEDOR) − π nome (FORNECEDOR ⨝ NIF=nif_fornecedor ENCOMENDA)
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+ γ designacao, AVG(preco) → preco_medio (TIPO_FORNECEDOR ⨝ FORNECEDOR ⨝ ENCOMENDA ⨝ ITEM_ENCOMENDA ⨝ PRODUTO)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ nome, COUNT(numero_encomenda) → total_encomendas (FORNECEDOR ⟝ NIF=nif_fornecedor ENCOMENDA) 
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+Produtos ← γ codigo, nome, COUNT(num_encomenda) → total (PRODUTO ⨝ codigo=cod_produto ITEM_ENCOMENDA) σ total > 2 (Produtos)
 ```
 
 
@@ -101,37 +102,39 @@ Write here your answer e.g:
 ### *a)*
 
 ```
-... Write here your answer ...
+π nome (PACIENTE) − π nome (PACIENTE ⨝ num_utente=utente_paciente CONSULTA) 
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+Prescricoes ← σ num_prescricao ≠ NULL (CONSULTA) γ especialidade, COUNT(num_prescricao) → total_prescricoes (MEDICO ⨝ num_id=id_medico Prescricoes) 
+
+
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ num_prescricao, dia (PRESCRICAO)
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+π nome_comercial (σ num_registo_farmaceutica=906 FARMACO) − π nome_comercial_farmaco (σ num_registo_farmaceutica=906 CONTEM)
 ```
 
 ### *e)* 
 
 ```
-... Write here your answer ...
+γ F.nome, COUNT(C.nome_comercial_farmaco) → total_vendido ((RENAME F FARMACEUTICA) ⨝ num_registo=num_registo_farmaceutica (RENAME C CONTEM))
 ```
 
 ### *f)* 
 
 ```
-... Write here your answer ...
+ MedicosDistintos ← γ num_utente, nome, COUNT_DISTINCT(id_medico) → qtd (PACIENTE ⨝ num_utente=utente_paciente (σ num_prescricao ≠ NULL CONSULTA)) π nome (σ qtd > 1 (MedicosDistintos))
 ```
