@@ -2,8 +2,8 @@ CREATE TABLE Cliente (
     Cadastro      int NOT NULL,
     Nome          varchar(100) NOT NULL,
     Apelido       varchar(100),
-    No_tel        varchar(20),
-    NIF           varchar(20),
+    No_tel        varchar(15),
+    NIF           varchar(9),
     PRIMARY KEY (Cadastro),
     UNIQUE (NIF)
 );
@@ -13,8 +13,8 @@ CREATE TABLE Barbeiro (
     Nome          varchar(100) NOT NULL,
     Apelido       varchar(100),
     Especialidade varchar(100),
-    NIF           varchar(20),
-    No_tel        varchar(20),
+    NIF           varchar(9),
+    No_tel        varchar(15),
     PRIMARY KEY (ID_Barbeiro),
     UNIQUE (NIF)
 );
@@ -28,9 +28,9 @@ CREATE TABLE Servico (
 );
 
 CREATE TABLE Fornecedor (
-    NIF           varchar(20) NOT NULL,
+    NIF           varchar(9) NOT NULL,
     Nome          varchar(100) NOT NULL,
-    No_Tel        varchar(20),
+    No_Tel        varchar(15),
     PRIMARY KEY (NIF)
 );
 
@@ -124,7 +124,7 @@ CREATE TABLE Consome (
 );
 
 CREATE TABLE Fornece (
-    NIF            varchar(20) NOT NULL,
+    NIF            varchar(9) NOT NULL,
     ID_Produto     int NOT NULL,
     Preco_unidade  numeric(10,2) NOT NULL,
     Quantidade     int NOT NULL,
