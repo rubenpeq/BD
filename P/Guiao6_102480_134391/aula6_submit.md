@@ -5,61 +5,92 @@
 ### *a)* Todos os tuplos da tabela autores (authors);
 
 ```
-... Write here your answer ...
+SELECT *
+FROM authors;
 ```
 
 ### *b)* O primeiro nome, o último nome e o telefone dos autores;
 
 ```
-... Write here your answer ...
+SELECT au_fname, au_lname, phone
+FROM authors;
 ```
 
 ### *c)* Consulta definida em b) mas ordenada pelo primeiro nome (ascendente) e depois o último nome (ascendente); 
 
 ```
-... Write here your answer ...
+SELECT au_fname, au_lname, phone
+FROM authors
+ORDER BY au_fname ASC, au_lname ASC;
 ```
 
 ### *d)* Consulta definida em c) mas renomeando os atributos para (first_name, last_name, telephone); 
 
 ```
-... Write here your answer ...
+SELECT au_fname AS first_name, au_lname AS last_name, phone AS telephone
+FROM authors
+ORDER BY au_fname, au_lname;
 ```
 
 ### *e)* Consulta definida em d) mas só os autores da Califórnia (CA) cujo último nome é diferente de ‘Ringer’; 
 
 ```
-... Write here your answer ...
+SELECT au_fname AS first_name, au_lname AS last_name, phone AS telephone
+FROM authors
+WHERE state = 'CA' AND au_lname <> 'Ringer'
+ORDER BY au_fname, au_lname;
 ```
 
 ### *f)* Todas as editoras (publishers) que tenham ‘Bo’ em qualquer parte do nome; 
 
 ```
-... Write here your answer ...
+SELECT *
+FROM publishers
+WHERE pub_name LIKE '%Bo%';
 ```
 
 ### *g)* Nome das editoras que têm pelo menos uma publicação do tipo ‘Business’; 
 
 ```
-... Write here your answer ...
+SELECT DISTINCT pub_name
+FROM (publishers AS p JOIN titles AS t ON p.pub_id = t.pub_id)
+WHERE type = 'Business';
 ```
 
 ### *h)* Número total de vendas de cada editora; 
 
 ```
-... Write here your answer ...
+SELECT publishers.pub_name, SUM(sales.qty) as 'vendas'
+
+FROM publishers
+INNER JOIN titles ON publishers.pub_id = titles.pub_id
+INNER JOIN sales ON titles.title_id = sales.title_id
+
+GROUP BY publishers.pub_name;
 ```
 
 ### *i)* Número total de vendas de cada editora agrupado por título; 
 
 ```
-... Write here your answer ...
+SELECT publishers.pub_name, titles.title, SUM(sales.qty) as 'vendas'
+
+FROM publishers
+INNER JOIN titles ON publishers.pub_id = titles.pub_id
+INNER JOIN sales ON titles.title_id = sales.title_id
+
+GROUP BY publishers.pub_name, titles.title;
 ```
 
 ### *j)* Nome dos títulos vendidos pela loja ‘Bookbeat’; 
 
 ```
-... Write here your answer ...
+SELECT DISTINCT titles.title
+
+FROM sales
+INNER JOIN stores ON sales.stor_id = stores.stor_id
+INNER JOIN titles ON titles.title_id = sales.title_id
+
+WHERE stores.stor_name = 'Bookbeat';
 ```
 
 ### *k)* Nome de autores que tenham publicações de tipos diferentes; 
