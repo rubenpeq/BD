@@ -1,35 +1,12 @@
 # BD: Trabalho Prático APF-T
 
-**Grupo**: PXGY
-- António Fictício, MEC: 1000
-- João Inventado, MEC: 2000
-
-# Instructions - TO REMOVE
-
-Este template é flexível.
-É sugerido seguir a estrutura, links de ficheiros e imagens, mas adicione conteúdo sempre que achar necessário.
-
----
-
-This template is flexible.
-It is suggested to follow the structure, file links and images but add more content where necessary.
-
-The files should be organized with the following nomenclature:
-
-- sql\01_ddl.sql: mandatory for DDL
-- sql\02_sp_functions.sql: mandatory for Store Procedure, Functions,... 
-- sql\03_triggers.sql: mandatory for triggers
-- sql\04_db_init.sql: scripts to init the database (i.e. inserts etc.)
-- sql\05_any_other_matter.sql: any other scripts.
-
-Por favor remova esta secção antes de submeter.
-
-Please remove this section before submitting.
+**Grupo**: P3G1
+- Rúben Pequeno, MEC: 102480
+- Eduardo Assis, MEC: 134391
 
 ## Introdução / Introduction
  
-Escreva uma pequena introdução sobre o trabalho.
-Write a simple introduction about your project.
+Este trabalho propõe o desenvolvimento de um sistema de gestão para uma barbearia onde são os próprios barbeiros que gerem os seus horários, atendem os clientes e realizam as vendas de produtos. O sistema permite o agendamento de serviços com um barbeiro específico, controla o stock de produtos para o cabelo e regista todas as receitas e despesas do negócio. Através de uma estrutura simples mas completa, pretende-se oferecer uma ferramenta que facilite a gestão deste tipo de negócios.
 
 ## ​Análise de Requisitos / Requirements
 
