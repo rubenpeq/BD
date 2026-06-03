@@ -25,7 +25,7 @@ Describe briefly the improvements made since the previous delivery.
 
 ### Versão final/Final Version
 
-![ER Diagram!](er.jpg "AnImage")
+![ER Diagram!](er2.jpeg "AnImage")
 
 ### Melhorias/Improvements
 
