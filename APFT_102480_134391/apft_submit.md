@@ -4,33 +4,31 @@
 - Rúben Pequeno, MEC: 102480
 - Eduardo Assis, MEC: 134391
 
-## Introdução / Introduction
+## Introdução
  
 Este trabalho propõe o desenvolvimento de um sistema de gestão para uma barbearia onde são os próprios barbeiros que gerem os seus horários, atendem os clientes e realizam as vendas de produtos. O sistema permite o agendamento de serviços com um barbeiro específico, controla o stock de produtos para o cabelo e regista todas as receitas e despesas do negócio. Através de uma estrutura simples mas completa, pretende-se oferecer uma ferramenta que facilite a gestão deste tipo de negócios.
 
-## ​Análise de Requisitos / Requirements
+## ​Análise de Requisitos
 
-## DER - Diagrama Entidade Relacionamento/Entity Relationship Diagram
+## DER - Diagrama Entidade Relacionamento
 
-### Versão final/Final version
+### Versão final
 
 ![DER Diagram!](der.jpg "AnImage")
 
-### Melhorias/Improvements 
+### Melhorias
 
-Descreva sumariamente as melhorias sobre a entrega anterior.
-Describe briefly the improvements made since the previous delivery.
+Não houveram alterações em relação à entrega anterior.
 
-## ER - Esquema Relacional/Relational Schema
+## ER - Esquema Relacional
 
-### Versão final/Final Version
+### Versão final
 
 ![ER Diagram!](er2.jpeg "AnImage")
 
-### Melhorias/Improvements
+### Melhorias
 
-Descreva sumariamente as melhorias sobre a entrega anterior.
-Describe briefly the improvements made since the previous delivery.
+Não houveram alterações em relação à entrega anterior.
 
 ## ​SQL DDL - Data Definition Language
 
@@ -41,13 +39,39 @@ Describe briefly the improvements made since the previous delivery.
 Uma secção por formulário.
 A section for each form.
 
-### Formulario exemplo/Example Form
+### Formulario exemplo
 
-![Exemplo Screenshot!](screenshots/customer_details_form.jpg "AnImage")
+![Exemplo Screenshot!](screenshots/dashboard.png "AnImage")
 
 ```sql
 -- Show data on the form
-SELECT * FROM MY_TABLE ....;
+SELECT ​
+
+        A.ID_Agendamento,​
+
+        C.Nome AS [Nome Cliente],​
+
+        B.Nome AS [Nome Barbeiro],​
+
+        A.Dia AS [Data],​
+
+        A.Hora AS [Horário],​
+
+        SUM(ASB.Preco_praticado) AS [Valor Total],​
+
+        A.Estado AS [Estado]​
+
+    FROM dbo.Agendamento A​
+
+    INNER JOIN dbo.Cliente C ON A.ID_Cliente = C.ID_Cliente​
+
+    INNER JOIN dbo.Agendamento_Servico_Barbeiro ASB ON A.ID_Agendamento = ASB.ID_Agendamento​
+
+    INNER JOIN dbo.Barbeiro B ON ASB.ID_Barbeiro = B.ID_Barbeiro​
+
+    GROUP BY A.ID_Agendamento, C.Nome, B.Nome, A.Dia, A.Hora, A.Estado​
+
+    ORDER BY A.Dia DESC, A.Hora ASC;​
 
 -- Insert new element
 INSERT INTO MY_TABLE ....;
@@ -62,15 +86,9 @@ Justifique as opções tomadas.
 Describe the steps used to minimize data duplication / space reduction.
 Justify the choices made.
 
-## Índices/Indexes
+## Índices
 
-Descreva os indices criados. Junte uma cópia do SQL de criação do indice.
-Describe the indexes created. Attach a copy of the SQL to create the index.
-
-```sql
--- Create an index to speed queries by XYZ in form A.
-CREATE INDEX index_name ON table_name (column1, column2, ...);
-```
+Não foram utilizados nenhum tipo de índices.
 
 ## SQL Programming: Stored Procedures, Triggers, UDF
 
@@ -78,17 +96,21 @@ CREATE INDEX index_name ON table_name (column1, column2, ...);
 
 [SQL Triggers File](sql/03_triggers.sql "SQLFileQuestion")
 
-## Outras notas/Other notes
+## Outras notas
 
-### Dados iniciais da dabase de dados/Database init data
+### Dados iniciais da dabase de dados
 
 [SQL DB Init File](sql/04_db_init.sql "SQLFileQuestion")
+
+### User Defined Functions
+
+[SQL UDFs](sql/05_udfs.sql "SQLFileQuestion")
 
 ### Apresentação
 
 [Slides](slides.pdf "Sildes")
 
-[Video](https://elearning.ua.pt/pluginfile.php/55992/mod_label/intro/VideoTrabalho2013.mp4)
+[Video](https://youtu.be/Rt6E7eiSwtw)
 
 
 
