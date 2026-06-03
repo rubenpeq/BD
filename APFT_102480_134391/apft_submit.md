@@ -161,12 +161,9 @@ EXEC sp_Agendamento_InsertServico
     @Preco_Praticado = 12.50;
 ```
 
-## Normalização/Normalization
+## Normalização
 
-Descreva os passos utilizados para minimizar a duplicação de dados / redução de espaço.
-Justifique as opções tomadas.
-Describe the steps used to minimize data duplication / space reduction.
-Justify the choices made.
+O esquema está normalizado até à 3.ª Forma Normal (3NF): atributos atómicos, sem grupos repetidos e sem dependências transitivas entre atributos não-chave. Essa normalização reduz duplicação, facilita manutenção e garante integridade referencial (associações N:M e especializações em tabelas separadas).
 
 ## Índices
 
