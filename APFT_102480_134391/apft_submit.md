@@ -107,10 +107,22 @@ SELECT ​
     ORDER BY A.Dia DESC, A.Hora ASC;​
 
 -- Insert new element
-INSERT INTO MY_TABLE ....;
-```
+DECLARE @NovoID_Agendamento INT;
 
-...
+EXEC sp_Agendamento_InsertCabecalho
+    @ID_Cliente = 12,
+    @Dia = '2026-06-03',
+    @Hora = '14:30:00',
+    @Estado = 'Pendente',
+    @Observacoes = 'Primeira marcação',
+    @ID_Agendamento = @NovoID_Agendamento OUTPUT;
+
+EXEC sp_Agendamento_InsertServico
+    @ID_Agendamento = @NovoID_Agendamento,
+    @ID_Servico = 3,
+    @ID_Barbeiro = 5,
+    @Preco_Praticado = 12.50;
+```
 
 ## Normalização/Normalization
 
@@ -144,8 +156,3 @@ Não foram utilizados nenhum tipo de índices.
 [Slides](slides.pdf "Sildes")
 
 [Video](https://youtu.be/Rt6E7eiSwtw)
-
-
-
-
- 
