@@ -69,8 +69,45 @@ Não houveram alterações em relação à entrega anterior.
 
 ## SQL DML - Data Manipulation Language
 
-Uma secção por formulário.
-A section for each form.
+```
+-- Form1.cs
+INSERT INTO dbo.Cliente (Nome, Apelido, NIF, Telefone, Data_Cadastro, Ativo)
+VALUES ('Carlos', 'Silva', '123456789', '912345678', GETDATE(), 1);
+
+-- FormBarbeiro.cs
+INSERT INTO dbo.Barbeiro (Nome, Apelido, NIF, Telefone, Especialidade, Ativo)
+VALUES ('Ricardo', 'Santos', '987654321', '967654321', 'Degradê', 1);
+
+-- FormStock.cs
+INSERT INTO dbo.Fornecedor (Nome, NIF, Telefone, Ativo)
+VALUES ('Distribuidora Beleza', '500123456', '234123456', 1);
+
+INSERT INTO dbo.Produto (Nome) VALUES ('Gel Fixador');
+-- Assumindo que o ID do Produto criado foi 1 e Fornecedor 1
+INSERT INTO dbo.Fornece_Produto (ID_Fornecedor, ID_Produto, Quantidade, Preco_Compra, Data_Fornecimento, Tipo_Stock)
+VALUES (1, 1, 50, 5.00, GETDATE(), 'Venda');
+
+-- FormMenu.cs
+INSERT INTO dbo.Agendamento (ID_Cliente, Dia, Hora, Estado, Observacoes)
+VALUES (1, '2026-06-10', '14:30:00', 'Pendente', 'Corte simples');
+
+-- FormServico.cs
+-- INSERT INTO dbo.Servico (Nome_Servico, Preco_base) VALUES ('Corte', 15.00);
+INSERT INTO dbo.Agendamento_Servico_Barbeiro (ID_Agendamento, ID_Servico, ID_Barbeiro, Preco_praticado)
+VALUES (1, 1, 1, 15.00);
+
+-- FormVenda.cs
+INSERT INTO dbo.Produto_venda (ID_Cliente, Data_Venda, Valor_Total)
+VALUES (1, GETDATE(), 10.00);
+
+-- Form_Despesas_Fixas.cs
+INSERT INTO dbo.Despesas_fixas (Nome_despesa, Valor, Dia_vencimento)
+VALUES ('Aluguel', 500.00, '2026-06-05');
+
+-- Form_Folha_Pagamento.cs
+INSERT INTO dbo.Folha_Pagamento (ID_Barbeiro, Mes_Ano, Salario)
+VALUES (1, '2026-06-01', 1200.00);
+```
 
 ### Formulario exemplo
 
